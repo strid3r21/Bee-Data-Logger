@@ -7,7 +7,7 @@
 ![Pin card back](https://github.com/strid3r21/Bee-Data-Logger/blob/main/pin-card-back-fold.png?raw=true)
 
 ### **Front**
-![alt text](https://github.com/strid3r21/Bee-Data-Logger/blob/main/BDL-Front.jpg?raw=true)
+![alt text](https://github.com/strid3r21/Bee-Data-Logger/blob/main/Bee-Data-Logger-V3-front.png?raw=true)
 
 ### **Back**
-![alt text](https://github.com/strid3r21/Bee-Data-Logger/blob/main/BDL-Back_1.jpg?raw=true)
+![alt text](https://github.com/strid3r21/Bee-Data-Logger/blob/main/Bee-Data-Logger-V3-back-blank.png?raw=true)
