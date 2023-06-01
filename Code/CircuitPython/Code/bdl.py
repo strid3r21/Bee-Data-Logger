@@ -36,28 +36,6 @@ def set_ldo2_power(state):
     global ldo2
     ldo2.value = state
 
-def set_time():
-        t = time.struct_time((2017, 10, 29, 15, 14, 15, 0, -1, -1))
-        # you must set year, mon, date, hour, min, sec and weekday
-        # yearday is not supported, isdst can be set but we don't do anything with it at this time
-        print("Setting time to:", t)  # uncomment for debugging
-        rtc.datetime = t
-        print()
-
-def print_time():
-
-# Main loop:
-    while True:
-        t = rtc.datetime
-        # print(t)     # uncomment for debugging
-        print(
-            "The date is {} {}/{}/{}".format(
-                days[int(t.tm_wday)], t.tm_mday, t.tm_mon, t.tm_year
-            )
-        )
-        print("The time is {}:{:02}:{:02}".format(t.tm_hour, t.tm_min, t.tm_sec))
-        time.sleep(1)  # wait a second
-
 
 def get_vbus_present():
     """Detect if VBUS (5V) power source is present"""
@@ -71,7 +49,7 @@ def get_battery_voltage():
     global vbat_voltage
     ADC_RESOLUTION = 2 ** 16 -1
     AREF_VOLTAGE = 3.3
-    R1 = 422000
+    R1 = 442000
     R2 = 160000
     return (vbat_voltage.value/ADC_RESOLUTION*AREF_VOLTAGE*(R1+R2)/R2)
 
