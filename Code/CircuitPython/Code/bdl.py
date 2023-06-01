@@ -9,8 +9,6 @@ from analogio import AnalogIn
 import adafruit_ds3231
 
 
-
-
 i2c = board.I2C()
 rtc = adafruit_ds3231.DS3231(i2c)
 
@@ -47,15 +45,6 @@ def set_time():
         print()
 
 def print_time():
-    if False:  # change to True if you want to set the time!
-    #                     year, mon, date, hour, min, sec, wday, yday, isdst
-        t = time.struct_time((2017, 10, 29, 15, 14, 15, 0, -1, -1))
-        # you must set year, mon, date, hour, min, sec and weekday
-        # yearday is not supported, isdst can be set but we don't do anything with it at this time
-        print("Setting time to:", t)  # uncomment for debugging
-        rtc.datetime = t
-        print()
-# pylint: enable-msg=using-constant-test
 
 # Main loop:
     while True:

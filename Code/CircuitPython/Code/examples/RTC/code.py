@@ -14,17 +14,17 @@ days = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sun
 
 if False:  # change to True if you want to set the time!
     #                     year, mon, date, hour, min, sec, wday, yday, isdst
-    t = time.struct_time((2017, 10, 29, 15, 14, 15, 0, -1, -1))
+    t = time.struct_time((2023, 6,   1,   12,   35, 2,   0,    -1,   -1))
     # you must set year, mon, date, hour, min, sec and weekday
     # yearday is not supported, isdst can be set but we don't do anything with it at this time
     print("Setting time to:", t)  # uncomment for debugging
-    rtc.datetime = t
+    bdl.rtc.datetime = t
     print()
 
 # Main loop:
 while True:
     t = rtc.datetime
-    f = (rtc.temperature*1.8) + 32
+    f = (rtc.temperature*1.8) + 32 ## convert to fahrenheit 
     # print(t)     # uncomment for debugging
     print(
         "The date is {} {}/{}/{}".format(
@@ -33,4 +33,4 @@ while True:
     )
     print("The time is {}:{:02}:{:02}".format(t.tm_hour, t.tm_min, t.tm_sec))
     print("Temperature is: %0.1ff°\n" % f)
-    time.sleep(60)  # wait a second
+    time.sleep(60)  # wait 60 seconds

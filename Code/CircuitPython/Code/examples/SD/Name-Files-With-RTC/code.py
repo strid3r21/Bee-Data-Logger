@@ -14,11 +14,21 @@ vfs = storage.VfsFat(sdcard)
 time.sleep(1)
 storage.mount(vfs, "/sd")
 
+if True:  # change to True if you want to set the time!
+    #                     year, mon, date, hour, min, sec, wday, yday, isdst
+    t = time.struct_time((2023, 6,   1,   12,   35, 2,   0,    -1,   -1))
+    # you must set year, mon, date, hour, min, sec and weekday
+    # yearday is not supported, isdst can be set but we don't do anything with it at this time
+    print("Setting time to:", t)  # uncomment for debugging
+    bdl.rtc.datetime = t
+    print()
+
 
 while True:
     RTC = bdl.rtc.datetime
+    date = str(RTC.tm_mon) + '-' + str(RTC.tm_mday) + '-' + str(RTC.tm_year) + '.txt'
     # open file for append
-    with open("/sd/"+RTC.tm_mon+"-"+RTC.tm_mday+"-"+RTC.tm_year+".txt", "a") as f:
+    with open("/sd/{}".format(date), "a") as f:
         RTC = bdl.rtc.datetime
         temp = (bdl.rtc.temperature * 1.8) + 32
         f.write(str("Date: {} {}/{}/{}".format(
@@ -26,4 +36,4 @@ while True:
             )) + " " + str("Time: {}:{:02}:{:02}".format(RTC.tm_hour, RTC.tm_min, RTC.tm_sec) +" "+ "Temp: f°%0.1f\n" % temp))
         
     # file is saved
-    time.sleep(60)
+    time.sleep(60) # sleep for 1 minute
