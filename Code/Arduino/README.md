@@ -1,3 +1,11 @@
+# Bee Data Logger Arduino Example Sketches & helper library
+
+Examples can be found in the [Bee Data Logger Arduino Helper](https://github.com/strid3r21/BeeDataLogger-Arduino-Helper) repo OR these can also be loaded from the examples menu in the Arduino IDE.
+
+## Installation
+
+This library can be installed through the Arduino library manager or manually from github by following [the instructions here](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries).
+
 # Programming on Arduino
 
 ## Add the Espressif ESP32 arduino board library to Arduino IDE
@@ -8,14 +16,6 @@ From there you will be able to search and add the ESP32 board library from the b
 
 ## How to program the Bee Data Loggger
 In order to program the Bee Data Logger you need to put it into download mode. To do so all you need to do is connect the USB-C cable and then press and hold the boot button. with the boot button being held down, press the reset button and release. then you can release the boot button. this will put the Bee Data Logger into download mode which will allow it to be programmed. Then for the board, select "Bee Data Logger" from the board manager.
-
-# Bee Data Logger Arduino Example Sketches & helper library
-
-Examples can be found in the [Bee Data Logger Arduino Helper](https://github.com/strid3r21/BeeDataLogger-Arduino-Helper) repo OR these can also be loaded from the examples menu in the Arduino IDE.
-
-## Installation
-
-This library can be installed through the Arduino library manager or manually from github by following [the instructions here](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries).
 
 ## List of functions
 
