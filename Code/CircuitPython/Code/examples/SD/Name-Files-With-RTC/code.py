@@ -3,7 +3,6 @@ import adafruit_sdcard
 import storage
 import digitalio
 import board
-import digitalio
 import time
 
 
@@ -27,6 +26,7 @@ if True:  # change to True if you want to set the time!
 while True:
     RTC = bdl.rtc.datetime
     date = str(RTC.tm_mon) + '-' + str(RTC.tm_mday) + '-' + str(RTC.tm_year) + '.txt'
+   
     # open file for append
     with open("/sd/{}".format(date), "a") as f:
         RTC = bdl.rtc.datetime
