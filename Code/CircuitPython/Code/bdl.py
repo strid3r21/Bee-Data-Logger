@@ -24,7 +24,9 @@ vbus_sense = DigitalInOut(board.VBUS_SENSE)
 vbus_sense.direction = Direction.INPUT
 # Setup the BATTERY voltage sense pin
 vbat_voltage = AnalogIn(board.BATTERY)
-     
+
+def get_adc_voltage(pin):
+    return (pin.value * 3.3) / 65536     
 # Helper functions
 def set_pixel_power(state):
     """Enable or Disable power to the onboard NeoPixel to either show colour, or to turn off to reduce current consumption."""
