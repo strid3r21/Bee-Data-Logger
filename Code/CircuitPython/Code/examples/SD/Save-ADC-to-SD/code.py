@@ -52,5 +52,7 @@ while True:
     with open("/sd/adc_readings.txt", "a") as f:
         RTC = bdl.rtc.datetime
         temp = (bdl.rtc.temperature * 1.8) + 32
-        f.write(str("Date: {} {}/{}/{}".format(bdl.days[int(RTC.tm_wday)], RTC.tm_mon, RTC.tm_mday, RTC.tm_year) + ", " + "Time: {}:{:02}:{:02}".format(RTC.tm_hour, RTC.tm_min, RTC.tm_sec) +" ,"+ "Temp: f°%0.1f" % temp + " ," + "ADC3 Voltage: %0.3f" % adc_3 + " ," + "ADC4 Voltage: %0.3f" % adc_4 +"\n"))
+        f.write(str("Date: {} {}/{}/{}".format(bdl.days[int(RTC.tm_wday)], RTC.tm_mon, RTC.tm_mday, RTC.tm_year) + ", " +\
+        "Time: {}:{:02}:{:02}".format(RTC.tm_hour, RTC.tm_min, RTC.tm_sec) +" ,"+ "Temp: f°%0.1f" % temp + " ," +\
+        "ADC3 Voltage: %0.3f" % adc_3 + " ," + "ADC4 Voltage: %0.3f" % adc_4 +"\n"))
         time.sleep(5)
